@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // topic one----------------------------->
 // in this example we are leaning how to use useState so that we can change the state of the component.
@@ -239,4 +239,133 @@ export default Hooks;
 */
 
 
+// topic nine----------------------------->
+// In this we are going to learn useEffect hook.
+// Also one important thing is whenever we are going to change the state of a component that means we are rerendering our component.
+/*
+const Hooks = () => {
+  const [count,setCount] = useState(0);
 
+  useEffect(() => {
+    // console.log("hello world");
+    document.title = `Chats ${count}`
+  })
+  // console.log("hello");
+  // if we click on the ClickMe button than it change the state and rerendering the components. 
+
+  return (
+    <div>
+      <h2>{count}</h2>
+      <button onClick={() => setCount(count+1)}>ClickMe</button>
+    </div>
+  )
+};
+export default Hooks;
+*/
+
+
+// topic ten----------------------------->
+// In this we are going to learn about whenever we need condition we only apply that inside a hook.
+/*
+const Hooks = () => {
+  const [count,setCount] = useState(0);
+  // in this, in our title if the chat is 0, than we don't want to show.
+  // this is the rule to use hooks we can note apply conditions outside the hooks
+  useEffect(() => {
+    if(count > 0){
+      document.title = `Chats${' '+ count}`
+    }
+    else{
+      document.title = `Chats`
+    }
+  })  
+  return (
+    <div>
+      <h2>{count}</h2>
+      <button onClick={() => setCount(count+1)}>ClickMe</button>
+    </div>
+  )
+};
+export default Hooks;
+*/
+
+
+// this is simple exercise which was asked by me in IM session 2;
+/*
+const Hooks = () => {
+  const changeInputs = () => {
+    const t_1 = document.getElementById('1').value;
+    const t_2 = document.getElementById('2').value;
+    document.getElementById('1').value = t_2;
+    document.getElementById('2').value = t_1;
+    console.log(t_1);
+  }
+  return (
+    <div>
+      <input type="text" placeholder="text1" id = '1'></input>
+      <input type="text" placeholder="text2" id = '2'></input>
+      <button onClick={changeInputs}>change</button>
+    </div>
+  )
+};
+export default Hooks;
+*/
+
+
+
+// topic Eleven----------------------------->
+// In this we are going to learn about useEffect Dependencies List
+/*
+const Hooks = () => {
+  const [count,setCount] = useState(0);
+  // many times we don't want to run our useEffect but whenever our state changes whole component id going to rerender again for this useEffect comes.
+
+  useEffect(() => {
+    if(count > 0){
+      document.title = `Chats${' '+ count}`
+    }
+    else{
+      document.title = `Chats`
+    }
+  },[count]);
+  // the above line when we are going to use a blank[] then it is going to render only one time but when we are using inside the array any prop that mean if that prop state change the useEffect is going to render again and again.
+  return (
+    <div>
+      <h2>{count}</h2>
+      <button onClick={() => setCount(count+1)}>ClickMe</button>
+    </div>
+  )
+};
+export default Hooks;
+*/
+
+
+// topic Twelve----------------------------->
+// In this, we are going to see useEffect CleanUp function.
+// also we age going to cover a problem in which we are rendering the window width size.
+/*
+const Hooks = () => {
+  const [width,setWidth] = useState(window.screen.width);
+  const actualWidth = () => {
+    console.log(window.innerWidth);
+    setWidth(window.innerWidth);
+  }
+  // this one is useEffect cleanUp function;
+  useEffect(() => {
+    // console.log("add event");
+    window.addEventListener("resize", actualWidth);
+    //here we are deleting everylisten after getting it so our code will not take too much space.
+    return () => {
+      // console.log("remove Event");
+      window.removeEventListener("resize", actualWidth);
+    }
+  });
+
+  return (
+    <div>
+      <p>The current window width is :- {width}</p>
+    </div>
+  )
+};
+export default Hooks;
+*/
