@@ -158,3 +158,85 @@ const Hooks = () => {
 };
 export default Hooks;
 */
+
+
+
+/*
+// topic seven----------------------------->
+// In this we are going to look Short Circuit Evaluation.
+// we can use || or && 
+const Hooks = () => {
+  return(
+    <div>
+     <h1>{'Shahid' || 'Ansari'}</h1> 
+     <h1>{'' || 'Ansari'}</h1> 
+     <h1>{'Shahid' && 'Ansari'}</h1> 
+     <h1>{'' && 'Ansari'}</h1> 
+    </div>
+  )
+};
+// in line 169 we are using as true or true so if first we get true then we show shahid
+// in line 170 we are using as false or true so if first we get true then we show Ansari
+// Now we are going to make and short circuit in line no. 173 and 174.
+// this one is same as && operator
+// we can do more with this short circuit.
+export default Hooks;
+*/
+
+
+// topic eight----------------------------->
+// In this we are going to see how basic form workspace
+/* 
+const Hooks = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [entry, setEntry] = useState([]);
+  
+  const submitForm =(e) => {
+    e.preventDefault();    
+    if(email && password){
+      const newEntry = {id: new Date().getTime().toString(), email, password};
+      // console.log(newEntry.id);
+      setEntry([...entry ,newEntry]);
+      setEmail("");
+      setPassword("");
+    }
+    else{
+      alert("Please enter all inputs!")
+    }
+  }
+
+  return (
+    <> 
+    <form action="" onSubmit={submitForm}>
+      <hr />
+      <div>
+        <label htmlFor="email">Email</label>
+        <input type="text" name="email" autoComplete="off" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+      </div>
+      <div>
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" autoComplete="off" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    
+    <div>
+      {entry.map((e) => {
+        const {id, email,password} =e;
+        return (
+          <div key={id}>
+          <p>{email}</p>
+          <p>{password}</p>
+        </div>
+        )
+      })}
+    </div>
+    </>
+  )
+};
+export default Hooks;
+*/
+
+
+
