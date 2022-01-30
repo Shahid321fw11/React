@@ -64,7 +64,9 @@ export default Hooks;
 
 // topic four----------------------------->
 // now we are going to discuss how to use array in useState;
+/*
 const Hooks = () => {
+  //first take an array
   const myData = [
     {
       id: 0,
@@ -82,9 +84,10 @@ const Hooks = () => {
       age: 37
     }
   ];
-  console.log(myData)
+  // console.log(myData)
 
   const [array,setArray] = useState(myData);
+
   const clearArrays = () => {
     setArray([])
   }
@@ -96,6 +99,62 @@ const Hooks = () => {
     </>
   )
 };
-
 export default Hooks;
+*/
 
+
+// topic five ---------------------------------------------------------------->
+// how to use spread operator to change update a sigle information.
+/*
+const Hooks = () => {
+  const aboutMe = {
+    name: 'Shahid',
+    age: 36
+  }
+  const[about,setAbout] = useState(aboutMe);
+  
+  const changeName = () => {
+    setAbout({...about, name:'Ansari'})
+  }
+
+  return(
+    <div>
+      <h1>Name: {about.name} and Age:{about.age}</h1>
+      <button onClick={changeName}>Change</button>
+    </div>
+  ) 
+};
+export default Hooks;
+*/
+
+
+// topic six ------------------------->
+// in this we are going to make a delete button same as todo delete button in
+/*
+const Hooks = () => {
+  const array = [
+    {id:0, name:'foo', age:36},
+    {id:1, name:'fee', age:38},
+    {id:2, name:'fau', age:40}
+  ];
+  const [newArray,setNewArray] = useState(array)
+  const clearArray = () => {
+    setNewArray([])
+  }
+  const deleteItem = (id) =>{
+    const myNewArray = newArray.filter((e) =>{
+      return e.id !== id;
+    })
+    setNewArray(myNewArray);
+  }
+  // in this an important thing to remember that if we use an onclick inside it if we pass prop so before it is called
+  // we have to use a fat arrow. Because react act like as a function if we pass parenthesis.
+  return(
+    <>
+      {newArray.map((e)=> <h1 key={e.id}>name : {e.name} age: {e.age} <button onClick={ () => deleteItem(e.id)}>delete</button></h1>)}
+      <button onClick={clearArray}>Clear Array</button>
+    </>
+  );
+};
+export default Hooks;
+*/
