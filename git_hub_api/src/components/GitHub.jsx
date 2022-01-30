@@ -20,6 +20,7 @@ const GitHub = () => {
 
     useEffect(() => {
         getUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return (
@@ -35,7 +36,7 @@ const GitHub = () => {
                         <div className="col-10 col-md-6 mt-5" key={id}>
                         <div className="card p-2">
                             <div className="d-flex align-items-center">
-                                    <div className="image"> <img src={ avatar_url } className="rounded" width="155" /> </div>
+                                    <div className="image"> <img src={ avatar_url } className="rounded" width="155" alt="" /> </div>
                                 <div className="ml-3 w-100">
                                         <h4 className="mb-0 mt-0 textLeft">{login}</h4>
                                         {/* <h4 className="mb-0 mt-0 textLeft">{login} <FcApproval/> </h4> */}

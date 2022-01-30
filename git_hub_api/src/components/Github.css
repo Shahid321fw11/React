@@ -3,10 +3,12 @@ body {
   border-radius: 10px;
   font-family: "Raleway", sans-serif;
 }
+
 h2 {
   text-align: center;
   margin: 20px 0;
 }
+
 .textLeft {
   text-align: left;
 }
