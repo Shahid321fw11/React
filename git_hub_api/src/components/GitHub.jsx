@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Github.css';
+import { FcApproval } from "react-icons/fc";
 
 const GitHub = () => {
 
@@ -38,7 +39,7 @@ const GitHub = () => {
                             <div className="d-flex align-items-center">
                                     <div className="image"> <img src={ avatar_url } className="rounded" width="155" alt="" /> </div>
                                 <div className="ml-3 w-100">
-                                        <h4 className="mb-0 mt-0 textLeft">{login}</h4>
+                                        <h4 className="mb-0 mt-0 textLeft">{login} <FcApproval /> </h4>
                                         {/* <h4 className="mb-0 mt-0 textLeft">{login} <FcApproval/> </h4> */}
                                     <div className="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
                                             <div className="d-flex flex-column">
