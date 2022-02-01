@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // topic one----------------------------->
 // in this example we are leaning how to use useState so that we can change the state of the component.
@@ -369,3 +369,43 @@ const Hooks = () => {
 };
 export default Hooks;
 */
+
+
+// topic twelve ----------------------------->
+// In this we are going to see the use of useRef.
+// useref is a hook which do not render.
+// this come in controlled and uncontrolled 
+// In a controlled component, form data is handled by a React component.
+// The alternative is uncontrolled components, where form data is handled by the DOM itself.
+// if we are using one time retrival or validation on submit than we are using uncontrolled components like useRef
+// else we use controlled components. This
+/*
+const Hooks = () => {
+  // it like a useState only and its preserve the value. NO rerender. DOM
+  const luckyName = useRef(null);
+  const [myName,setMyName] = useState(false);
+  const submitForm = (e) => {
+    e.preventDefault();
+    const name = luckyName.current.value
+    name === "" ? alert("plz fill the data") : setMyName(true);
+    setMyName(name)
+    luckyName.current.value = ''
+    // console.log();
+  }
+  return (
+    <div>
+      <form action="" onSubmit={submitForm}>
+        <div>
+          <label htmlFor="luckyName">Enter your lucky Name</label>
+          <input type="text" id="luckyName" ref={luckyName}/>
+        </div>
+        <br />
+        <button>Submit</button>
+      </form>
+        <p> { myName ? `your lucky name is ${myName}` : ""} </p>
+    </div>
+  )
+};
+export default Hooks;
+*/
+
