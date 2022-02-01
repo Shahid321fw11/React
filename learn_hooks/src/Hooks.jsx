@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useReducer, useRef, useState } from 'react';
 
 // topic one----------------------------->
 // in this example we are leaning how to use useState so that we can change the state of the component.
@@ -409,3 +409,79 @@ const Hooks = () => {
 export default Hooks;
 */
 
+
+//topic 13 ----------------------------->
+// in this we are going to see the useReducer
+// reducer of type (state, action) => newState, and returns the current state paired with a dispatch method.
+/*
+const initialState = 0;
+const reducer = (state, action) => {
+  // console.log(state, action);
+  if (action.type === "INCREMENT") {
+      return state + 1;
+  }
+  if (action.type === "DECREMENT") {
+      return state - 1;
+  }
+  return state;
+}
+
+const Hooks = () => {
+  const[state,dispatch] = useReducer(reducer,initialState);
+  return (
+    <>
+    <div>
+      <p>{state}</p>
+      <div className='btnStylePosition'>
+          <button onClick={() => dispatch({type: "INCREMENT"})}> Inc </button>    
+          <button onClick={() => dispatch({type: "DECREMENT"})}> Dec </button>   
+      </div>        
+    </div>
+    </>
+  )
+};
+export default Hooks;
+*/
+
+
+
+// topic 14 ----------------------------->
+// What is Prop Drilling, Context API & useContext Hook
+// What are props ---->Components in React can be passed some parameters. These parameters are generally named props.
+// What are Prop Drilling ----> Prop drilling is basically a situation when the same data is being sent at almost every level due to requirements in the final level.
+/*
+The problem with Prop Drilling is that whenever data from the Parent component will be needed, it would have to come from each level,
+Regardless of the fact that it is not needed there and simply needed in last.
+A better alternative to this is using useContext hook. The useContext hook is based on Context API and works on the mechanism of Provider and Consumer.
+Provider needs to wrap components inside Provider Components in which data have to be consumed.
+Then in those components, using the useContext hook that data needs to be consumed.
+*/
+
+
+
+// topic 15 ----------------------------->
+// Custom hook - making you own hook.
+
+
+
+// topic 16 ----------------------------->
+// useLocation
+/*
+The useLocation hook returns the location object that represents the current URL.
+You can think about it like a useState that returns a new location whenever the URL changes.
+*/
+
+
+
+// topic 17 ----------------------------->
+// useHistory
+/*
+The useHistory hook gives you access to the history instance that you may use to navigate.
+*/
+
+
+// topic 18 ----------------------------->
+// React-Toastify
+/*
+React-Toastify allows you to add notifications to your app with ease. No more nonsense!
+*/
