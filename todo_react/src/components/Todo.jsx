@@ -65,8 +65,7 @@ const Todo = () => {
         setIsEditItem(id);
     }
 
-
-
+    
     return (
         <>
             <div className="main-div">
