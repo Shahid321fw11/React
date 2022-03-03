@@ -11,15 +11,13 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri);
-
+mongoose.connect(uri, { useNewUrlParser: true});
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
-
-const exerciseRouter = require('./routes/exercise');
-const userRouter = require('./routes/user');
+const exerciseRouter = require('./routes/exercise.js');
+const userRouter = require('./routes/user.js');
 
 app.use('/exercises', exerciseRouter);
 app.use('/users', userRouter);
